@@ -1,17 +1,3 @@
-function EspectroLog(Fs, signal)
-    N = length(signal);
-    spectrum = fft(signal);
-    frequencies = (0:N-1) * (Fs / N);
-    magnitude = abs(spectrum);
-    magnitude_log = 20 * log10(magnitude); % Convertendo para dB
-
-    plot(frequencies, magnitude_log);
-    xlabel('Frequência (Hz)');
-    ylabel('Magnitude (dB)');
-    title('Espectro de Frequência (Escala Log)');
-    grid on;
-end
-
 % Carregar o arquivo de áudio
 filename = '22401_9900.mp3';
 [x, fs] = audioread(filename);
